@@ -1,0 +1,79 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/formValidator",
+			"style": {
+				"navigationBarTitleText": "表单校验"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/timeSelector",
+			"style": {
+				"navigationBarTitleText": "时间选择器"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/uploadPics",
+			"style": {
+				"navigationBarTitleText": "多图上传"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/fixedTip",
+			"style": {
+				"navigationBarTitleText": "置顶提示"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/customNavigator",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "自定义导航"
+			}
+		}, 
+		{
+			"path": "pages/myComponents/emptyList",
+			"style": {
+				"navigationBarTitleText": "空列表"
+			}
+		}
+	],
+	"tabBar": {
+	    "color": "#404B69",
+	    "selectedColor": "#26A69A",
+	    "borderStyle": "white",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/images/icon_enter.png",
+	        "selectedIconPath": "static/images/icon_enter_selected.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/my/my",
+	        "iconPath": "static/images/icon_my.png",
+	        "selectedIconPath": "static/images/icon_my_selected.png",
+	        "text": "我的"
+	    }]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "demo",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F6F6F6"
+	}
+}
