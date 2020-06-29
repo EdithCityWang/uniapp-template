@@ -29,7 +29,7 @@ export default {
 			type: String,
 			default: ''
 		},
-		// 最多限制张数
+		// 最多限制张数，默认1张
 		limit: {
 			type: Number,
 			default: 1
@@ -40,14 +40,9 @@ export default {
 			default: 'image'
 		}
 	},
-	model: {
-		type: Array,
-		event: 'on-change-value'
-	},
 	data() {
 		return {
-			files: [],
-			file: ''
+			files: [] // 上传图片后的图片地址集合
 		};
 	},
 	methods: {
@@ -56,12 +51,13 @@ export default {
 		 * @param {Number} index 图片所在索引值
 		 */
 		removeItem(index) {
-			console.log(index);
 			this.files.splice(index, 1);
-
 			this.sendMessage(); // 发送信息父组件
 		},
-		
+		/**
+		 * @description 上传图片
+		 * @param {String} url 图片临时地址
+		 */
 		uploadImg(url) {
 			return new Promise((resolve, reject) => {
 				uploadToOss({
@@ -86,7 +82,9 @@ export default {
 		},
 		
 		/**
-		 * @description 上传图片
+		 * @description 遍历调用upload接口
+		 * @param {Array} tempFilePaths uni.chooseImage选择图片后返回的临时图片地址集合
+		 * @returns {Array} arr 异步调用upload接口返回的图片服务器上的地址集合
 		 */
 		async uploads(tempFilePaths) {
 			let arr = [];
@@ -106,11 +104,11 @@ export default {
 			uni.chooseImage({
 				count: _this.limit,
 				async success(chooseImageRes) {
+					// 选择图片后，立即调用图片上传的接口，es6的await必须被async包含。
 					let files = await _this.uploads(chooseImageRes.tempFilePaths);
+
 					_this.files = [..._this.files, ...files];
-					console.log(files, "====")
-					_this.sendMessage();
-					
+					_this.sendMessage(); // 发送信息父组件
 				}
 			});
 		},
