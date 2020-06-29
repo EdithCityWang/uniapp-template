@@ -62,7 +62,7 @@
  					this.current = e.currentIndex;
  					// 初始化数据
  					this.StoreHouseId = 0; // 仓库id
- 					this.CateId = 0; // 鹿只分类id
+ 					this.CateId = 0; // 分类id
  					this.Status = ""; // 入库状态
  					this.Time = ""; // 割取时间
  				// }

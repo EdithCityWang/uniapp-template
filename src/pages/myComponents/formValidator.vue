@@ -71,11 +71,11 @@
 				sexArr: [
 					{
 						Id: 'male',
-						Name: '公鹿'
+						Name: '男'
 					},
 					{
 						Id: 'female',
-						Name: '母鹿'
+						Name: '女'
 					}
 				],
 			}

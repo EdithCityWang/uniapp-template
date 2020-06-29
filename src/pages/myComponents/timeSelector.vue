@@ -23,51 +23,10 @@
 </template>
 
 <script>
-	import { 
-		addDeer, 
-		getDeerCates, 
-		getDeerHouses, 
-		getDeerSources,
-		getTenantUsers
-	} from "@/api/http"
-	import utils from "@/tools/util"
-	
 	export default {
 		data() {
 			return {
-				postdata: { 
-					"Nickname":"", // 昵称
-					"BirthDay":"", // 生日
-					"Gender": "", // 性别
-					"IsSick": false,  // 是否有疾病， 默认无false
-					"SicknessDescription": "", // 疾病描述
-				},
-				// 表单校验
-				rulesCustom: {
-					Nickname: [
-						{ required: true, message: "请输入昵称" }
-					],
-					BirthDay: [
-						{ required: true, message: "请选择生日"}
-					],
-					Gender: [
-						{ required: true, message: "请选择性别"}
-					],
-					SicknessDescription: [
-						{ required: false, message: "请输入疾病描述"}
-					],
-				},
-				// 性别列表
-				sexArr: [
-					{
-						Id: 'male',
-						Name: '公鹿'
-					},
-					{
-						Id: 'female',
-						Name: '母鹿'
-					}
-				],
+
 			}
 		},
 		onLoad() {
@@ -77,29 +36,7 @@
 			
 		},
 		methods: {
-			/**
-			 * @description 是否有疾病
-			 */
-			radioChange (e) {
-				this.postdata.IsSick = Boolean(Number(e.detail.value));
-			},
 
-			/**
-			 * @description 提交表单
-			 * @param {String} name ref实例名称
-			 */
-			handleSubmit(name) {
-				console.log(this.postdata);
-				let _this = this;
-				this.$refs[name].validate((valid, errorsArr) => {
-					if(valid) {
-						uni.showToast({
-							icon: 'none',
-							title: 'success'
-						});
-					}
-				})
-			}
 		}
 	}
 </script>
