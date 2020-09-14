@@ -4,7 +4,7 @@ import store from '@/store'
 const axios = new Request();
 
 // #ifndef H5
-// axios.config.baseURL = "https://xxx";
+axios.config.baseURL = "http://192.168.43.8:3000";
 // #endif
 
 axios.interceptors.request.use((config) => { // 可使用async await 做异步操作

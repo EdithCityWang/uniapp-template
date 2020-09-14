@@ -32,8 +32,6 @@
 	}
 </script>
 <style lang="scss" scoped>
-@import '@/uni.scss';
-$nav-height: 44px;
 .bluetooth_tip {
 	position: fixed;
 	top: 0;

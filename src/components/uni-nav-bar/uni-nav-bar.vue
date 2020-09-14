@@ -113,8 +113,6 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '@/uni.scss';
-	$nav-height: 44px;
 	.uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 34rpx;

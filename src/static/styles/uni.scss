@@ -15,26 +15,33 @@
 /* 颜色变量 */
 
 /* 行为相关颜色 */
-$uni-color-primary: #007aff;
-$uni-color-success: #4cd964;
-$uni-color-warning: #f0ad4e;
+$uni-color-primary: #26A69A;
+$uni-color-success: #4FCF8A;
+$uni-color-warning: #FDA82D;
 $uni-color-error: #dd524d;
+$uni-color-white: #ffffff;
+$uni-color-black: #000000;
 
 /* 文字基本颜色 */
-$uni-text-color:#333;//基本色
+$uni-text-color:#333; //基本色
 $uni-text-color-inverse:#fff;//反色
-$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$uni-text-color-regular: #666666; // 普通文本
+$uni-text-color-secondary: #999999; // 辅助文本
+$uni-text-color-grey: #999; //辅助灰色，如加载更多的提示信息
 $uni-text-color-placeholder: #999999;
 $uni-text-color-disable:#c0c0c0;
 
+$uni-text-color-price: #FD6335; // 价格文本
+$uni-text-color-link: #3388FF; // 链接文本颜色
+
 /* 背景颜色 */
 $uni-bg-color:#ffffff;
-$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-grey: #f5f5f5;
 $uni-bg-color-hover:#f1f1f1;//点击状态颜色
-$uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+$uni-bg-color-mask:rgba(0, 0, 0, 0.6);//遮罩颜色
 
 /* 边框颜色 */
-$uni-border-color:#F6F6F6;
+$uni-border-color: #F6F6F6;
 
 /* 尺寸变量 */
 
@@ -44,9 +51,9 @@ $uni-font-size-base:28rpx;
 $uni-font-size-lg:32rpx;
 
 /* 图片尺寸 */
-$uni-img-size-sm:40rpx;
-$uni-img-size-base:52rpx;
-$uni-img-size-lg:80rpx;
+$uni-img-size-sm: 120rpx;
+$uni-img-size-base: 150rpx;
+$uni-img-size-lg: 240rpx;
 
 /* Border Radius */
 $uni-border-radius-sm: 4rpx;
@@ -75,5 +82,32 @@ $uni-font-size-subtitle:36rpx;
 $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:30rpx;
 
+/* 顶部导航 */
 $status-bar-height: var(--status-bar-height); // 状态栏高度
 $nav-height: 44px; // 自定义导航栏高度
+
+/* 搜索框 */
+$uni-searchbar-height: 64rpx; // 搜索框高度
+
+/* 分段器 */
+$my-segment-control-height: 80rpx; // 分段器高度
+$my-segment-control-border-radius: 10rpx; // 分段器圆角
+$my-segment-control-font-size: 30rpx; // 分段器字号
+$my-segment-control-color: $uni-text-color-secondary; // 分段器字色
+$my-segment-control-border-color: #D9D9D9; // 分段器边的颜色
+$my-segment-control-bg-color: $uni-bg-color; // 分段器背景颜色
+$my-segment-control-color-active: $uni-color-white; // 分段器激活状态字色
+$my-segment-control-bg-color-active: $uni-color-primary; // 分段器激活状态背景颜色
+
+/* 空列表 */
+$my-list-empty-color: $uni-text-color-regular; // 提示文字字色
+$my-list-empty-font-size: 30rpx; // 提示文字字号
+$my-list-empty-image-width: 332rpx; // 空列表图片宽度
+
+/* 输入框 */
+$my-input-border-color: #DCDDE0; // 输入框边框颜色
+$my-input-placeholder-color: #C8C9CC; // 输入框提示字色
+
+/* 弹窗 */
+$my-modal-button-border-color: #EBEDF0; // 弹窗按钮边框颜色
+$my-modal-border-radius: 10rpx;

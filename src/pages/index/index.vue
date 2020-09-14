@@ -1,6 +1,6 @@
 <template>
-	<view class="tabbar_page">
-		<my-form class="demo_index_page">
+	<view>
+		<my-form class="demo_index_page" :label-width="200">
 			<my-form-section>
 				<my-form-item label="自定义导航" @click.native="toPage('/pages/myComponents/customNavigator')">
 					<view slot="extra" class="icon iconfont iconxuanze-right"></view>
@@ -20,6 +20,11 @@
 			</my-form-section>
 			<my-form-section>
 				<my-form-item label="form表单校验" @click.native="toPage('/pages/myComponents/formValidator')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
+			</my-form-section>
+			<my-form-section>
+				<my-form-item label="富文本解析器" @click.native="toPage('/pages/myComponents/htmlParse')">
 					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
 				</my-form-item>
 			</my-form-section>
@@ -55,11 +60,6 @@
 </script>
 
 <style lang="scss" scoped>
-	page {
-		overflow-y: auto;
-		height: 100%;
-	}
-
 	.demo_index_page {
 		.iconfont {
 			font-size: 20rpx;

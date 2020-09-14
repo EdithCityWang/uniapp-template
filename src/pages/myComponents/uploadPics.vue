@@ -7,7 +7,7 @@
 				</my-form-item>
 			</my-form-section>
 			<view class="form_item_btn">
-				<button type="primary" class="btn_primary" form-type="submit" @click="handleSubmit('postdata')">提交信息</button>
+				<button type="primary" size="large" form-type="submit" @click="handleSubmit('postdata')">提交信息</button>
 			</view>
 		</my-form>
 	</view>
@@ -66,6 +66,9 @@
 </script>
 
 <style lang="scss" scoped>
-
-	
+	.form_page {
+		.form_item_btn {
+			padding: 30rpx;
+		}
+	}
 </style>

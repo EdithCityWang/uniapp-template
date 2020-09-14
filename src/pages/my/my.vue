@@ -9,7 +9,7 @@
 				<text class="userrank">{{ userInfo.Role.Remark }}</text>
 			</view>
 		</view>
-		<button class="btn_add" type="primary" @click="myLogout" plain>退出登录</button>
+		<button type="primary" data-shape="circle" size="large" @click="myLogout" plain>退出登录</button>
 	</view>
 </template>
 
@@ -63,13 +63,8 @@
 </script>
 
 <style lang="scss">
-	page {
-		overflow-y: auto;
-		height: 100%;
-	}
-	
 	.my_page {
-		.btn_add {
+		button {
 			margin: 100rpx 80rpx 0;
 		}
 		
@@ -119,27 +114,6 @@
 					margin-bottom: 8rpx;
 				}
 			}
-		}
-			
-		.btn_logout {
-			display: flex;
-			justify-content: space-between;
-			background-color: #FFFFFF;
-			box-shadow:0px 0px 12rpx rgba(0,0,0,0.08);
-			border-radius: 0;
-			margin-top: 40rpx;
-			font-size: 30rpx;
-			line-height: 114rpx;
-			padding: 0 40rpx;
-			
-			.iconfont {
-				font-size: 20rpx;
-				color: #999999;
-			}
-		}
-		
-		.btn_logout:after {
-			border: none;
 		}
 	}
 </style>

@@ -89,8 +89,6 @@
  </script>
  
  <style lang="scss">
- 	@import '@/uni.scss';
- 	
 	.custom_navigator_page {
 
 		.content {

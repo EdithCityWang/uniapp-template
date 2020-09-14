@@ -52,7 +52,11 @@
 				"navigationBarTitleText": "空列表"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/myComponents/htmlParse",
+            "style" : {}
+        }
+    ],
 	"tabBar": {
 	    "color": "#404B69",
 	    "selectedColor": "#26A69A",

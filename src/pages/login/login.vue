@@ -15,7 +15,7 @@
 				<input v-model.trim="postdata.Password" type="password" name="Password" placeholder="请输入密码" placeholder-style="color: #95A0B6;" />
 			</view>
 			<view class="form_item_btn">
-				<button class="btn_primary" type="primary" form-type="submit">登录</button>
+				<button type="primary" size="large" form-type="submit">登录</button>
 			</view>
 		</form>
 	</view>

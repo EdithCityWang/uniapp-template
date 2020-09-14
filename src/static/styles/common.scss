@@ -1,0 +1,416 @@
+/*每个页面公共css */
+page {
+	font-size: $uni-font-size-base;
+	color: $uni-text-color;
+	background-color: $uni-bg-color-grey;
+}
+
+page,
+view,
+text,
+scroll-view {
+	box-sizing: border-box;
+}
+
+image {
+	display: block;
+}
+
+button {
+	border-radius: $uni-border-radius-sm;
+	padding: 0 30rpx;
+	font-size: 30rpx;
+	margin: 0;
+	
+	&::after {
+		content: none;
+	}
+}
+
+button[type='default'] {
+	color: $uni-text-color-inverse;
+	background-color: #868686;
+
+	&[plain] {
+		color: #868686;
+		border-color: #868686;
+		background-color: $uni-bg-color;
+	}
+}
+
+button[type='primary'] {
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-primary;
+
+	&[plain] {
+		color: $uni-color-primary;
+		border-color: $uni-color-primary;
+		background-color: $uni-bg-color;
+	}
+}
+
+button[type='warn'] {
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-warning;
+
+	&[plain] {
+		color: $uni-color-warning;
+		border-color: $uni-color-warning;
+		background-color: $uni-bg-color;
+	}
+}
+
+/* 小型按钮 */
+button[size='mini'] {
+	line-height: 46rpx;
+	padding: 0 12rpx;
+	font-size: $uni-font-size-sm;
+
+	&[data-shape='circle'] {
+		border-radius: 23rpx;
+	}
+}
+
+/* 中等按钮 */
+button[size='medium'] {
+	line-height: 60rpx;
+	padding: 0 35rpx;
+	font-size: 30rpx;
+
+	&[data-shape='circle'] {
+		border-radius: 30rpx;
+	}
+}
+
+/* 大按钮 */
+button[size='large'] {
+	line-height: 100rpx;
+	padding: 0 47rpx;
+	font-size: 30rpx;
+
+	&[data-shape='circle'] {
+		border-radius: 50rpx;
+	}
+}
+
+/* card css */
+.my_card {
+	box-shadow: 0px 3rpx 6rpx rgba(45, 31, 80, 0.06);
+	background-color: #fdfdfd;
+	border-radius: 10rpx;
+	margin: 0 20rpx;
+	overflow: hidden;
+
+	.my_card_header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20rpx 35rpx 0 30rpx;
+
+		.my_card_header_left {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.my_card_footer {
+		padding: 20rpx 0;
+		margin: 0 30rpx;
+		border-top: 2rpx solid #dcdcdc;
+	}
+}
+
+.my_card + .my_card {
+	margin-top: 20rpx;
+}
+
+/* 店铺样式 */
+.shop_info_box {
+	font-size: 30rpx;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+
+	.iconfont {
+		font-size: 36rpx;
+		background-color: $uni-text-color-inverse;
+		color: $uni-color-primary;
+		margin-right: 15rpx;
+	}
+}
+
+/* tag css */
+.my_tag {
+	background-color: $uni-color-primary;
+	color: $uni-text-color-inverse;
+	font-size: 22rpx;
+	line-height: 30rpx;
+	padding: 0 11rpx;
+	border-radius: 3rpx;
+	margin-right: 12rpx;
+}
+
+/* number box */
+/deep/ .good_num_box {
+	width: 170rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+
+	.uni-numbox__minus,
+	.uni-numbox__plus {
+		// color: $uni-text-color-regular;
+		width: 50rpx;
+		height: 50rpx;
+		background-color: #f5f7fa;
+		border-color: #dcdfe6;
+	}
+	.uni-numbox__minus {
+		border-top-left-radius: 4rpx;
+		border-bottom-left-radius: 4rpx;
+
+		.uni-numbox--text {
+			color: $uni-text-color-regular;
+
+			&.uni-numbox--disabled {
+				color: #c0c0c0;
+			}
+		}
+	}
+
+	.uni-numbox__plus {
+		border-top-right-radius: 4rpx;
+		border-bottom-right-radius: 4rpx;
+
+		.uni-numbox--text {
+			color: $uni-text-color-price;
+		}
+	}
+
+	.uni-numbox--text {
+		font-size: $uni-font-size-base;
+	}
+
+	.uni-numbox__value {
+		border-top-width: 1rpx;
+		border-bottom-width: 1rpx;
+		width: 70rpx;
+		height: 48rpx;
+		font-size: $uni-font-size-base;
+		border-color: #cbcbcb;
+	}
+}
+
+/* 分段器默认样式 */
+/deep/ .segmented-control {
+	height: 10rpx;
+	height: $my-segment-control-height;
+	
+	.segmented-control__item--button {
+		border-width: 0;
+		border-top-width: 2rpx;
+		border-bottom-width: 2rpx;
+		border-color: $my-segment-control-border-color !important;
+		background-color: $my-segment-control-bg-color;
+		
+		.segmented-control__text {
+			color: $my-segment-control-color !important;
+			font-size: $my-segment-control-font-size;
+		}
+	}
+
+	.segmented-control__item--button--last {
+		border-right-width: 2rpx;
+		border-top-right-radius: $my-segment-control-border-radius;
+		border-bottom-right-radius: $my-segment-control-border-radius;
+	}
+	
+	.segmented-control__item--button--first{
+		border-left-width: 2rpx;
+		border-top-left-radius: $my-segment-control-border-radius;
+		border-bottom-left-radius: $my-segment-control-border-radius;
+	}
+	
+	.segmented-control__item--button--active {
+		border-width: 2rpx;
+		border-color: $my-segment-control-bg-color-active !important;
+		background-color: $my-segment-control-bg-color-active !important;
+		
+		.segmented-control__text {
+			color: $my-segment-control-color-active !important;
+		}
+	}
+}
+
+/* 对话框样式 */
+.my_prompt_modal {
+	/deep/ .my_form_item {
+		padding: 0;
+		min-height: initial;
+		
+		.my_form_item_content {
+			padding: 0;
+			
+			input {
+				height: 80rpx;
+				border-radius: 2rpx;
+				border: 2rpx solid $my-input-border-color;
+				font-size: 30rpx;
+				text-align: left;
+				padding: 0 17rpx;
+			}
+		}
+		
+		.my_form_item_label {
+			padding: 0;
+		}
+	}
+	
+	/deep/ .my_form_item::after {
+		content: none;
+	}
+}
+
+.input_placeholder {
+	color: $my-input-placeholder-color;
+}
+
+/* 商品列表筛选条件menu */
+.good_sort_menus {
+	display: flex;
+	background-color: #FFFFFF;
+	
+	.menu_item {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 106rpx;
+		font-size: 34rpx;
+		color: $uni-text-color;
+		font-weight: bold;
+		
+		&.active {
+			color: $uni-color-primary;
+		}
+		
+		.menu_icons {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 2rpx 0 0 10rpx;
+			transform: scale(0.5);
+			
+			.iconfont {
+				color: #BFBFBF;
+				font-size: 24rpx;
+				
+				&.active {
+					color: $uni-color-primary;
+				}
+			}
+		}
+	}
+}
+
+
+/* 商品底部导航 */
+/deep/ .uni-goods-nav {
+	border-top: 2rpx solid #CDCDCD;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	
+	.uni-tab__cart-box {
+		height: 130rpx;
+		
+		.uni-tab__cart-sub-left {
+			padding: 0 15rpx;
+			
+			.uni-tab__cart-button-left {
+				margin: 0 35rpx;
+				
+				.uni-tab__icon {
+					width: initial;
+					height: initial;
+					
+					.uni-icons {
+						font-size: 36rpx;
+						color: #707070 !important;
+						line-height: 1;
+					}
+				}
+				
+				.uni-tab__text {
+					font-size: 22rpx;
+					color: #707070 !important;
+					line-height: 1;
+				}
+				
+			}
+		}
+		
+		.uni-tab__right {
+			margin: 15rpx 30rpx 15rpx 0;
+			
+			.uni-tab__cart-button-right-text {
+				font-size: 30rpx;
+			}
+		}
+	}
+}
+
+/* 加入购物车弹窗 */
+ .add_cart_modal {
+	/deep/ .my_modal {
+		align-items: flex-end;
+		
+		 .my_modal_wrapper {
+			width: 100%;
+			border-radius: 0;
+			border-top-left-radius: 30rpx;
+			border-top-right-radius: 30rpx;
+			
+			.my_modal_header {
+				text-align: right;
+				padding: 30rpx 30rpx 0;
+			}
+			
+			.my_modal_content {
+				padding: 0 60rpx 10rpx;
+				text-align: left;
+			}
+			
+			.my_modal_footer {
+				border-top: none;
+				padding: 40rpx 50rpx;
+				.btn_footer {
+					display: flex;
+					justify-content: space-between;
+					
+					button[size=large][data-shape=circle] {
+						flex: 1;
+						border-radius: 40rpx;
+						line-height: 80rpx;
+						font-size: $uni-font-size-base;
+					}
+					
+					button + button {
+						margin-left: 50rpx;
+					}
+					
+					button[type=warn] {
+						background:linear-gradient(272deg,rgba(255,165,44,1) 0%,rgba(243,180,53,1) 100%);
+					}
+					
+					button[type=primary] {
+						background:linear-gradient(272deg,rgba(230,0,73,1) 0%,rgba(243,53,97,1) 100%);
+					}
+				}
+				
+			}
+		}
+	}
+}

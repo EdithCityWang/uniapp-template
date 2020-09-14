@@ -69,8 +69,6 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '@/uni.scss';
-	$nav-height: 44px;
 	.segmented-control {
 		/* #ifndef APP-NVUE */
 		display: flex;
