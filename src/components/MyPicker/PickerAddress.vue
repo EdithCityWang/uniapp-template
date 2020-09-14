@@ -1,12 +1,12 @@
 <template>
 	<view class="my_picker">
-		<picker @change="bindChange" :mode="mode" :value="selectedIndex" :range="range" :range-key="rangeKey" :disabled="range.length === 0">
+		<!-- <picker @change="bindChange" :mode="mode" :value="selectedIndex" :range="range" :range-key="rangeKey" :disabled="range.length === 0">
 			<view class="my_picker_content">
 				<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ range.length === 0 ? '暂无数据' : (selectedValue || placeholder) }}</text>
 			</view>
 			<text class="icon iconfont iconxuanze"></text>
-		</picker>
-		<picker mode="multiSelector" :range="" @change="">
+		</picker> -->
+		<picker mode="multiSelector">
 			<view class="my_picker_content">
 				<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ range.length === 0 ? '暂无数据' : (selectedValue || placeholder) }}</text>
 			</view>

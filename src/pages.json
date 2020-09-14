@@ -56,6 +56,14 @@
             "path" : "pages/myComponents/htmlParse",
             "style" : {}
         }
+        ,{
+            "path" : "pages/myComponents/grids",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/myComponents/addressSelector",
+            "style" : {}
+        }
     ],
 	"tabBar": {
 	    "color": "#404B69",

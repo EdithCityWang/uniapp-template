@@ -27,6 +27,12 @@
 				<my-form-item label="富文本解析器" @click.native="toPage('/pages/myComponents/htmlParse')">
 					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
 				</my-form-item>
+				<my-form-item label="4*n宫格" @click.native="toPage('/pages/myComponents/grids')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
+				<my-form-item label="地址选择器" @click.native="toPage('/pages/myComponents/addressSelector')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
 			</my-form-section>
 		</my-form>
 	</view>

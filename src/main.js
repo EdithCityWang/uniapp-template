@@ -13,6 +13,12 @@ import PickerDate from "./components/MyPicker/PickerDate";
 
 import UploadPic from "./components/MyUpload/UploadPic";
 
+import Grids from "./components/MyGrids/Grids";
+
+import Modal from "./components/MyModal/Modal";
+
+import Swiper from "./components/MySwiper/Swiper";
+
 Vue.component('MyForm', Form);
 Vue.component('MyFormItem', FormItem);
 Vue.component('MyFormSection', FormSection);
@@ -21,6 +27,12 @@ Vue.component('MyPickerSelector', PickerSelector);
 Vue.component('MyPickerDate', PickerDate);
 
 Vue.component('MyUploadPic', UploadPic);
+
+Vue.component('MyGrids', Grids);
+
+Vue.component('MyModal', Modal);
+
+Vue.component('MySwiper', Swiper);
 
 // #ifdef H5
 import Jweixin from 'jweixin-module'
