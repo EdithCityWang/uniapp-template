@@ -33,6 +33,9 @@
 				<my-form-item label="地址选择器" @click.native="toPage('/pages/myComponents/addressSelector')">
 					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
 				</my-form-item>
+				<my-form-item label="tabs" @click.native="toPage('/pages/myComponents/tabs')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
 			</my-form-section>
 		</my-form>
 	</view>

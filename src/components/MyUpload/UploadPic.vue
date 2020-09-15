@@ -38,12 +38,20 @@ export default {
 		imgType: {
 			type: String,
 			default: 'image'
+		},
+		// 默认图片
+		defaultFiles: {
+			type: Array,
+			default: []
 		}
 	},
 	data() {
 		return {
 			files: [] // 上传图片后的图片地址集合
 		};
+	},
+	mounted() {
+		this.files = this.files.concat(this.defaultFiles);
 	},
 	methods: {
 		/**

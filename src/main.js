@@ -19,6 +19,8 @@ import Modal from "./components/MyModal/Modal";
 
 import Swiper from "./components/MySwiper/Swiper";
 
+import Tabs from "./components/MyTabs/Tabs";
+
 Vue.component('MyForm', Form);
 Vue.component('MyFormItem', FormItem);
 Vue.component('MyFormSection', FormSection);
@@ -33,6 +35,8 @@ Vue.component('MyGrids', Grids);
 Vue.component('MyModal', Modal);
 
 Vue.component('MySwiper', Swiper);
+
+Vue.component('MyTabs', Tabs);
 
 // #ifdef H5
 import Jweixin from 'jweixin-module'

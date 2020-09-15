@@ -64,6 +64,10 @@
             "path" : "pages/myComponents/addressSelector",
             "style" : {}
         }
+        ,{
+            "path" : "pages/myComponents/tabs",
+            "style" : {}
+        }
     ],
 	"tabBar": {
 	    "color": "#404B69",
