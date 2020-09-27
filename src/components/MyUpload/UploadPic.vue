@@ -136,11 +136,11 @@ export default {
 <style lang="scss" scoped>
 .upload_box {
 	.upload {
-		width: 120rpx;
-		height: 120rpx;
+		width: $uni-img-size-sm;
+		height: $uni-img-size-sm;
 		border: 2rpx solid #d9d9d9;
-		font-size: 24rpx;
-		color: #999999;
+		font-size: $uni-font-size-sm;
+		color: $uni-text-color-secondary;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -158,19 +158,19 @@ export default {
 
 		.image_item {
 			position: relative;
-			width: 120rpx;
-			height: 120rpx;
+			width: $uni-img-size-sm;
+			height: $uni-img-size-sm;
 			margin: 0 20rpx 20rpx 0;
 			z-index: 1;
 
 			image {
-				width: 120rpx;
-				height: 120rpx;
+				width: $uni-img-size-sm;
+				height: $uni-img-size-sm;
 			}
 
 			.iconfont {
-				color: #ff0000;
-				font-size: 30rpx;
+				color: $uni-color-error;
+				font-size: $uni-font-size-lg;
 				position: absolute;
 				z-index: 10;
 				right: 0;
@@ -181,8 +181,8 @@ export default {
 }
 
 .upload_tip {
-	color: #999999;
-	font-size: 24rpx;
+	color: $uni-text-color-secondary;
+	font-size: $uni-font-size-sm;
 	margin-top: -10rpx;
 }
 </style>

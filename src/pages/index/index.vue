@@ -36,6 +36,9 @@
 				<my-form-item label="tabs" @click.native="toPage('/pages/myComponents/tabs')">
 					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
 				</my-form-item>
+				<my-form-item label="轮播图swiper" @click.native="toPage('/pages/myComponents/swiperDemo')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
 			</my-form-section>
 		</my-form>
 	</view>
@@ -59,7 +62,6 @@
 			 * @param {String} path 跳转路径 
 			 */
 			toPage (path) {
-				console.log(path)
 				uni.navigateTo({
 					url: path
 				})

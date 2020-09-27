@@ -1,7 +1,7 @@
 <template>
  	<view class="custom_navigator_page">
  		<uni-nav-bar left-icon="back" :status-bar="true" :fixed="true" @clickLeft="back">
- 			<uni-segmented-control class="navbar_box" :current="current" :values="items" @clickItem="onClickItem" style-type="text" active-color="#2AA68F"></uni-segmented-control>
+ 			<uni-segmented-control class="navbar_box" :current="current" :values="items" @clickItem="onClickItem" style-type="text" :active-color="variables.primary_color"></uni-segmented-control>
  		</uni-nav-bar>
  		<view class="filter_box" :style="'top:' + filterBoxTop + 'px'">
  			<my-picker-selector v-model="Status" :range="statusArr" range-key="Name" placeholder="所有状态"></my-picker-selector>
@@ -19,6 +19,7 @@
  <script>
  	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
  	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
+	import variables from '@/static/styles/variables.scss.js'
 	
  	export default {
  		components: {
@@ -27,6 +28,7 @@
  		},
  		data() {
  			return {
+				variables: variables,
 				filterBoxTop: 44,
  				items: ['记录', '使用'],
  				current: 0,

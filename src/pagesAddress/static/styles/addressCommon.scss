@@ -1,0 +1,61 @@
+.btn_footer[type=primary] {
+	position: fixed;
+	z-index: 99;
+	left: 30rpx;
+	right: 30rpx;
+	bottom: 64rpx;
+	color: $uni-text-color;
+}
+
+.address_box {
+	position: relative;
+	padding: 40rpx 74rpx 40rpx 130rpx;
+	margin: 20rpx 20rpx 60rpx;
+	
+	.icon_address {
+		position: absolute;
+		left: 23rpx;
+		top: 50%;
+		margin-top: -40rpx;
+		width: 80rpx;
+		height: 80rpx;
+	}
+	.address_province {
+		display: flex;
+		align-items: center;
+		font-size: $uni-font-size-sm;
+		color: $uni-text-color-regular;
+	}
+	
+	.address_detail {
+		font-size: $uni-font-size-sm;
+		color: $uni-text-color-regular;
+		margin-top: 23rpx;
+	}
+	
+	.address_contact {
+		display: flex;
+		align-items: center;
+		font-size: $uni-font-size-base;
+		color: $uni-text-color;
+		
+		text {
+			font-weight: bold;
+		}
+		
+		text + text {
+			margin-left: 52rpx;
+		}
+		
+		.my_tag {
+			margin-left: 14rpx;
+		}
+	}
+	
+	.uni-icons {
+		position: absolute;
+		top: 50%;
+		right: 30rpx;
+		margin-top: -18rpx;
+	}
+}

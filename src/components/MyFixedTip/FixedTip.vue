@@ -41,9 +41,9 @@
 	left: 0;
 	right: 0;
 	padding: 0 80rpx 0 30rpx;
-	color: #999999;
-	background-color: #ffffff;
-	font-size: 24rpx;
+	color: $uni-text-color-secondary;
+	background-color: $uni-bg-color;
+	font-size: $uni-font-size-sm;
 	z-index: 999;
 	line-height: 1.6;
 	height: 112rpx;
@@ -54,7 +54,7 @@
 		position: absolute;
 		right: 30rpx;
 		top: 20rpx;
-		font-size: 24rpx;
+		font-size: $uni-font-size-sm;
 	}
 }
 </style>

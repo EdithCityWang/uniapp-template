@@ -17,8 +17,8 @@
 				</my-form-item>
 				<my-form-item label="有无疾病">
 					<radio-group class="radio-group" @change="radioChange">
-						<label><radio size="40" value="1" :checked="postdata.IsSick" color="#27A698" />有</label>
-						<label><radio size="40" value="0" :checked="!postdata.IsSick" color="#27A698" />无</label>
+						<label><radio size="40" value="1" :checked="postdata.IsSick" :color="variables.primary_color" />有</label>
+						<label><radio size="40" value="0" :checked="!postdata.IsSick" :color="variables.primary_color" />无</label>
 					</radio-group>
 				</my-form-item>
 				<my-form-item class="form_item_sick" prop="SicknessDescription" v-if="postdata.IsSick">
@@ -33,18 +33,13 @@
 </template>
 
 <script>
-	import { 
-		addDeer, 
-		getDeerCates, 
-		getDeerHouses, 
-		getDeerSources,
-		getTenantUsers
-	} from "@/api/http"
 	import utils from "@/tools/util"
+	import variables from '@/static/styles/variables.scss.js'
 	
 	export default {
 		data() {
 			return {
+				variables: variables,
 				postdata: { 
 					"Nickname":"", // 昵称
 					"BirthDay":"", // 生日

@@ -19,7 +19,7 @@
 
 <style lang="scss">
 	.my_form_section {
-		background-color: #fff;
+		background-color: $uni-bg-color;
 		box-shadow:0px 0px 12px rgba(0,0,0,0.08);
 		margin-top: 20rpx;
 	}

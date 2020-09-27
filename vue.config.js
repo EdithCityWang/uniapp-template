@@ -1,3 +1,5 @@
+let scssVariables = require('./src/static/styles/variables.scss.js');
+	
 module.exports = {
     publicPath: './',
     lintOnSave: true,
@@ -5,7 +7,9 @@ module.exports = {
     css: {
         loaderOptions: {
             scss: {
-				
+				prependData: Object.keys(scssVariables)
+					.map(k => `\$${k.replace('_', '-')}: ${scssVariables[k]};`)
+					.join('\n')
             }
         }
     },

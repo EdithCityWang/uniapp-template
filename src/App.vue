@@ -1,6 +1,8 @@
 <script>
 import { mapState } from 'vuex';
 import { getWxConfig } from '@/api/http';
+import tWeixin from '@/tools/weixin.js';
+
 export default {
 	computed: {
 		...mapState(['userInfo'])
@@ -17,13 +19,15 @@ export default {
 		// getWxConfig().then(res => {
 		// 	console.log(res, "===")
 		// })
+		// 监测小程序版本更新
+		tWeixin.autoUpdate()
 		
 		// 如果没有token则跳回登录页
-		this.$store.dispatch('getUserInfo').catch(res => {
-			uni.reLaunch({
-				url: 'pages/login/login'
-			});
-		})
+		// this.$store.dispatch('getUserInfo').catch(res => {
+		// 	uni.reLaunch({
+		// 		url: 'pages/login/login'
+		// 	});
+		// })
 	},
 	onHide: function() {
 		console.log('App Hide');

@@ -15,27 +15,27 @@
 /* 颜色变量 */
 
 /* 行为相关颜色 */
-$uni-color-primary: #26A69A;
+$uni-color-primary: $primary-color;
 $uni-color-success: #4FCF8A;
 $uni-color-warning: #FDA82D;
-$uni-color-error: #dd524d;
+$uni-color-error: #ff0000;
 $uni-color-white: #ffffff;
 $uni-color-black: #000000;
 
 /* 文字基本颜色 */
 $uni-text-color:#333; //基本色
 $uni-text-color-inverse:#fff;//反色
-$uni-text-color-regular: #666666; // 普通文本
-$uni-text-color-secondary: #999999; // 辅助文本
-$uni-text-color-grey: #999; //辅助灰色，如加载更多的提示信息
-$uni-text-color-placeholder: #999999;
+$uni-text-color-regular: $text-color-regular; // 普通文本
+$uni-text-color-secondary: $text-color-secondary; // 辅助文本
+$uni-text-color-grey: $text-color-secondary; //辅助灰色，如加载更多的提示信息
+$uni-text-color-placeholder: $text-color-secondary;
 $uni-text-color-disable:#c0c0c0;
 
 $uni-text-color-price: #FD6335; // 价格文本
 $uni-text-color-link: #3388FF; // 链接文本颜色
 
 /* 背景颜色 */
-$uni-bg-color:#ffffff;
+$uni-bg-color: $bg-color;
 $uni-bg-color-grey: #f5f5f5;
 $uni-bg-color-hover:#f1f1f1;//点击状态颜色
 $uni-bg-color-mask:rgba(0, 0, 0, 0.6);//遮罩颜色

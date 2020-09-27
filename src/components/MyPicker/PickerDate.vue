@@ -130,7 +130,7 @@
 		},
 		watch: {
 			value(newVal) {
-				this.selectedValue = newVal.isArray(newVal) ?  e.value.join(newVal) : newVal;
+				this.selectedValue = Array.isArray(newVal) ?  e.value.join(newVal) : newVal;
 			}
 		}
 	}

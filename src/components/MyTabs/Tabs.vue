@@ -24,6 +24,7 @@
 </template>
 
 <script>
+	import variables from '@/static/styles/variables.scss.js'
 	export default {
 		props: {
 			value: Number || String,
@@ -44,10 +45,10 @@
 			defaultOptions() {
 				return {
 					...{
-						color: '#666666', // 字色
-						bgColor: '#fff',	// 背景色
-						activeColor: '#F02A5C',	// 激活状态字色
-						activeBgColor: '#fff'	// 激活状态背景色
+						color: variables.text_color_regular, // 字色
+						bgColor: variables.bg_color,	// 背景色
+						activeColor: variables.primary_color,	// 激活状态字色
+						activeBgColor: variables.bg_color	// 激活状态背景色
 					},
 					...this.options
 				}
@@ -86,7 +87,7 @@
 		display: inline-block;
 		line-height: 90rpx;
 		font-size: 30rpx;
-		color: #666666;
+		color: $uni-text-color-regular;
 		padding: 0 39rpx;
 		
 		&.active {

@@ -121,7 +121,7 @@
 	padding: 46rpx 48rpx 0;
 	color: $uni-text-color;
 	text-align: center;
-	font-size: 30rpx;
+	font-size: $uni-font-size-lg;
 	font-weight: bold;
 }
 
@@ -141,7 +141,7 @@
 		button {
 			flex: 1;
 			background-color: $uni-bg-color;
-			font-size: 30rpx;
+			font-size: $uni-font-size-lg;
 			line-height: 96rpx;
 			border-radius: 0;
 			

@@ -55,7 +55,6 @@ export default {
 		},
 		// label样式
 		labelStyles() {
-			console.log(this.labelWidth, this.FormInstance.labelWidth)
 			return `width: ${this.labelWidth || this.FormInstance.labelWidth}rpx`;
 		}
 	},
@@ -137,28 +136,28 @@ export default {
 	align-items: flex-start;
 	// z-index: 1;
 	padding: 0 40rpx;
+}
 
-	.my_form_item_label {
-		font-size: 30rpx;
-		color: #333333;
-		padding: 36rpx 0;
-	}
+.my_form_item_label {
+	font-size: 30rpx;
+	color: $uni-text-color;
+	padding: 36rpx 0;
+}
 
-	.my_form_item_content {
-		padding: 36rpx 0;
-		flex: 1;
-	}
+.my_form_item_content {
+	padding: 36rpx 0;
+	flex: 1;
+}
 
-	.my_form_item_extra {
-		// width: 40rpx;
-		text-align: center;
-		line-height: 42rpx;
-		position: absolute;
-		top: 50%;
-		right: 40rpx;
-		margin-top: -21rpx;
-		z-index: 10;
-	}
+.my_form_item_extra {
+	// width: 40rpx;
+	text-align: center;
+	line-height: 42rpx;
+	position: absolute;
+	top: 50%;
+	right: 40rpx;
+	margin-top: -21rpx;
+	z-index: 10;
 }
 
 .my_form_item::after {
@@ -168,7 +167,13 @@ export default {
 	right: 40rpx;
 	top: 0;
 	height: 2rpx;
-	background-color: #f2f2f2;
+	background-color: $uni-border-color;
 	z-index: 10;
 }
+
+/* #ifdef H5 */
+.my_form_item:first-child::after {
+	content: none;
+}
+/* #endif */
 </style>

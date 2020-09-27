@@ -68,7 +68,30 @@
             "path" : "pages/myComponents/tabs",
             "style" : {}
         }
+        ,{
+            "path" : "pages/myComponents/swiperDemo",
+            "style" : {}
+        }
     ],
+	"subPackages": [
+		{
+			"root": "pagesAddress",
+			"pages": [
+				{
+					"path" : "address/address",
+					"style" : {
+						"navigationBarTitleText": "地址管理"
+					}
+				},
+				{
+					"path" : "address/addressAdd",
+					"style" : {
+						"navigationBarTitleText": "新增地址"
+					}
+				}
+			]
+		}
+	],
 	"tabBar": {
 	    "color": "#404B69",
 	    "selectedColor": "#26A69A",
