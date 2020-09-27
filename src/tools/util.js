@@ -11,7 +11,7 @@ export default {
 	   * 时间戳转为日期格式
 	   * time: 时间戳，如1506505252
 	   * */
-	formatDate: function (time, format = 'yyyy-MM-dd hh:mm:ss') {
+	formatDate (time, format = 'yyyy-MM-dd hh:mm:ss') {
 	    var date = new Date(time)
 	    var year = date.getFullYear()
 	    var month = date.getMonth() + 1 // 月份是从0开始的
