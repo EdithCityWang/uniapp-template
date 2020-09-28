@@ -16,8 +16,8 @@
 			<my-list-empty :empty-image="require('@/pagesAddress/static/images/img_address_empty.png')" tip-text="暂时还没有任何地址"></my-list-empty>
 		</template>
 		<view style="height: 208rpx;"></view>
-		<button v-if="userInfo.Token && !userInfo.Mobile" class="btn_footer" type="primary" size="large" data-shape="circle" open-type="getPhoneNumber" @getphonenumber="getphonenumber">+ 新增收货地址</button>
-		<button v-else class="btn_footer" type="primary" size="large" data-shape="circle" @click="toPage('/pagesAddress/address/addressAdd?type=add')">+ 新增收货地址</button>
+		<!-- <button v-if="userInfo.Token && !userInfo.Mobile" class="btn_footer" type="primary" size="large" data-shape="circle" open-type="getPhoneNumber" @getphonenumber="getphonenumber">+ 新增收货地址</button> -->
+		<button class="btn_footer" type="primary" size="large" data-shape="circle" @click="toPage('/pagesAddress/address/addressAdd?type=add')">+ 新增收货地址</button>
 	</view>
 </template>
 

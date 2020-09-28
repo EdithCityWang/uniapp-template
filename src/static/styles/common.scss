@@ -31,7 +31,8 @@ button[type='default'] {
 	color: $uni-text-color-inverse;
 	background-color: #868686;
 
-	&[plain] {
+	&[plain],
+	&[plain].button-hover{
 		color: #868686;
 		border-color: #868686;
 		background-color: $uni-bg-color;
@@ -42,7 +43,8 @@ button[type='primary'] {
 	color: $uni-text-color-inverse;
 	background-color: $uni-color-primary;
 
-	&[plain] {
+	&[plain],
+	&[plain].button-hover{
 		color: $uni-color-primary;
 		border-color: $uni-color-primary;
 		background-color: $uni-bg-color;
@@ -53,7 +55,8 @@ button[type='warn'] {
 	color: $uni-text-color-inverse;
 	background-color: $uni-color-warning;
 
-	&[plain] {
+	&[plain],
+	&[plain].button-hover{
 		color: $uni-color-warning;
 		border-color: $uni-color-warning;
 		background-color: $uni-bg-color;

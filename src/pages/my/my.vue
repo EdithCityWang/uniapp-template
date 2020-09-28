@@ -6,9 +6,17 @@
 			<view class="user_info_box">
 				<image class="logo" src="/static/images/icon_head_def.png"></image>
 				<text class="username">{{ userInfo.Account }}</text>
-				<text class="userrank">{{ userInfo.Role.Remark }}</text>
+				<text class="userrank">{{ userInfo.Role && userInfo.Role.Remark ?  userInfo.Role.Remark : '' }}</text>
 			</view>
 		</view>
+		<my-form :label-width="200">
+			<my-form-section>
+				<my-form-item label="地址管理" @click.native="toPage('/pagesAddress/address/address')">
+					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+				</my-form-item>
+			</my-form-section>
+		</my-form>
+		
 		<button type="primary" data-shape="circle" size="large" @click="myLogout" plain>退出登录</button>
 	</view>
 </template>
@@ -32,6 +40,16 @@
 
 		},
 		methods: {
+			/**
+			 * @description 跳转页面
+			 * @param {String} path 跳转路径 
+			 */
+			toPage (path) {
+				uni.navigateTo({
+					url: path
+				})
+			},
+			
 			/**
 			 * @description 退出登录
 			 */

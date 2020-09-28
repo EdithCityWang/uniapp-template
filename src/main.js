@@ -10,6 +10,7 @@ import FormSection from "./components/MyForm/FormSection";
 
 import PickerSelector from "./components/MyPicker/PickerSelector";
 import PickerDate from "./components/MyPicker/PickerDate";
+import PickerAddress from "./components/MyPicker/PickerAddress";
 
 import UploadPic from "./components/MyUpload/UploadPic";
 
@@ -27,6 +28,7 @@ Vue.component('MyFormSection', FormSection);
 
 Vue.component('MyPickerSelector', PickerSelector);
 Vue.component('MyPickerDate', PickerDate);
+Vue.component('MyPickerAddress', PickerAddress);
 
 Vue.component('MyUploadPic', UploadPic);
 
