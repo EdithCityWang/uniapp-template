@@ -1,6 +1,10 @@
 <template>
-	<view class="my_form_item">
-		<view class="my_form_item_label" :style="labelStyles">{{ label }}</view>
+	<view :class="'my_form_item ' + className">
+		<view class="my_form_item_label" :style="labelStyles">
+			<slot name="label">
+				{{ label }}
+			</slot>
+		</view>
 		<view class="my_form_item_content"><slot></slot></view>
 		<view class="my_form_item_extra"><slot name="extra"></slot></view>
 	</view>
@@ -8,6 +12,7 @@
 
 <script>
 import schema from 'async-validator';
+import regxs from '@/tools/regxs.js';
 
 function getPropByPath(obj, path) {
 	let tempObj = obj;
@@ -32,6 +37,7 @@ function getPropByPath(obj, path) {
 	
 export default {
 	props: {
+		className: String, // class类名
 		label: String, // 标签文本
 		labelWidth: Number, // 表单域标签的宽度
 		prop: {
@@ -45,13 +51,20 @@ export default {
 	computed: {
 		// form item值
 		fieldValue () {
-			const model = this.FormInstance.model;
-			if (!model || !this.prop) { return; }
-			let path = this.prop;
-			if (path.indexOf(':') !== -1) {
-				path = path.replace(/:/, '.');
+			try{
+				const model = this.FormInstance.model;
+				if (!model || !this.prop) { return; }
+				let path = this.prop;
+				if (path.indexOf(':') !== -1) {
+					path = path.replace(/:/, '.');
+				}
+				return getPropByPath(model, path).v;
+			}catch(e){
+				console.log(e)
+				return null
+				//TODO handle the exception
 			}
-			return getPropByPath(model, path).v;
+			
 		},
 		// label样式
 		labelStyles() {
@@ -60,20 +73,19 @@ export default {
 	},
 	data() {
 		return {
-			regxs: {
-				'money': /^(([1-9]\d{0,5}|0)([.]\d{0,2})?)?$/,
-				'weight': /^(([1-9]\d{0,5}|0)([.]\d{0,3})?)?$/,
-				'mobile': /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/, // 手机号码，11位
-				// 身份证号码 18 15位
-				'idCard': /(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$)/,
-			}
+			regxs: regxs
 		};
 	},
 	created() {
 		// console.log(this.prop)
-		if(this.prop) {
-			this.FormInstance.addFormItem(this); // 新增formItem
+		try{
+			if(this.prop) {
+				this.FormInstance.addFormItem(this); // 新增formItem
+			}
+		} catch(err) {
+			console.log(err)
 		}
+		
 	},
 	methods: {
 		/**
@@ -112,7 +124,13 @@ export default {
 			
 			// 获取校验数据
 			let model = {};
-			model[this.prop] = this.fieldValue;
+			try{
+				model[this.prop] = this.fieldValue;
+			}catch(e){
+				//TODO handle the exception
+				console.log(e)
+			}
+			
 	
 			validator.validate(model, { firstFields: true }, (errors, fields) => {
 				if (errors) {
@@ -123,7 +141,13 @@ export default {
 		}
 	},
 	destroyed() {
-		this.FormInstance.removeFormItem(this);
+		try{
+			this.FormInstance.removeFormItem(this);
+		}catch(e){
+			console.log(e)
+			//TODO handle the exception
+		}
+		
 	}
 };
 </script>
@@ -139,7 +163,7 @@ export default {
 }
 
 .my_form_item_label {
-	font-size: 30rpx;
+	font-size: $uni-font-size-base;
 	color: $uni-text-color;
 	padding: 36rpx 0;
 }
@@ -165,8 +189,8 @@ export default {
 	position: absolute;
 	left: 40rpx;
 	right: 40rpx;
-	top: 0;
-	height: 2rpx;
+	bottom: 0;
+	height: 1rpx;
 	background-color: $uni-border-color;
 	z-index: 10;
 }

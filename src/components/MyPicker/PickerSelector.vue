@@ -1,10 +1,22 @@
 <template>
 	<view class="my_picker">
-		<picker @change="bindChange" :mode="mode" :value="selectedIndex" :range="range" :range-key="rangeKey" :disabled="range.length === 0">
-			<view class="my_picker_content">
-				<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ range.length === 0 ? '暂无数据' : (selectedValue || placeholder) }}</text>
+		<picker 
+			@change="bindChange" 
+			:mode="mode"
+			:start="start"
+			:end="end"
+			:fields="fields"
+			:value="selectedIndex"
+			:range="range" 
+			:range-key="rangeKey" 
+			:disabled="(mode === 'selector' && range.length === 0) || disabled"
+		>
+			<view>
+				<view class="my_picker_content">
+					<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ (mode === 'selector' && range.length === 0) ? '暂无数据' : (selectedValue || placeholder) }}</text>
+				</view>
+				<text :class="'icon iconfont ' + iconName"></text>
 			</view>
-			<text class="icon iconfont iconxuanze"></text>
 		</picker>
 	</view>
 	
@@ -32,6 +44,24 @@
 			placeholder: {
 				type: String,
 				default: "请选择"
+			},
+			// selector(date, time)表示有效日期范围的开始，字符串格式为"YYYY-MM-DD"
+			start: String, 
+			// 表示有效日期范围的结束，字符串格式为"YYYY-MM-DD"
+			end: String,
+			// 有效值 year、month、day，表示选择器的粒度，默认为 day，App 端未配置此项时使用系统 UI
+			fields: {
+				type: String,
+				default: 'day'
+			},
+			// 是否禁用
+			disabled: {
+				type: Boolean,
+				default: false
+			},
+			iconName: {
+				type: String,
+				default: 'iconxuanze'
 			}
 		},
 		// #ifdef H5
@@ -53,42 +83,56 @@
 			bindChange (e) {
 				let { value = 0 } = e.detail;
 				
-				this.selectedValue = this.range[value][this.rangeKey];
+				console.log(value, '====')
 				this.selectedIndex = value;
 				
-				this.$emit('on-change', {
-					index: value,
-					item: this.range[value]
-				});
-
-				this.$emit('input', this.range[value].Id);
+				if(this.mode === 'selector') {
+					this.selectedValue = this.range[value][this.rangeKey];
+					
+					
+					this.$emit('on-change', {
+						index: value,
+						item: this.range[value]
+					});
+					
+					this.$emit('input', this.range[value].Id);
+				} else if(this.mode === 'date' || this.mode === 'time') {
+					this.selectedValue = value;
+					
+					this.$emit('on-change', {
+						value: value
+					});
+					
+					this.$emit('input', value);
+				}
+				
 			}
 		},
 		watch: {
 			value(newVal) {
-				let index = this.range.findIndex(item => item.Id === newVal);
-				if(index >= 0) {
-					this.selectedValue = this.range[index][this.rangeKey];
-					this.selectedIndex = index;
+				console.log(newVal, "================")
+				if(this.mode === 'selector' || this.mode === 'multiSelector') {
+					let index = this.range.findIndex(item => item.Id === newVal);
+					if(index >= 0) {
+						this.selectedValue = this.range[index][this.rangeKey];
+						this.selectedIndex = index;
+					}
+				} else if(this.mode === 'date' || this.mode === 'time'){
+					this.selectedValue = newVal || '';
 				}
 			}
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.my_picker {
 		position: relative;
-		
-		.my_picker_content {
-			font-size: 30rpx;
-			padding-right: 50rpx;
-		}
 		
 		.iconfont {
 			right: 0;
 			position: absolute;
-			color: #2E3344;
+			color: $uni-text-color;
 			z-index: 10;
 			top: 50%;
 			font-size: 32rpx;
@@ -100,7 +144,12 @@
 		
 		.iconxuanze {
 			transform: scale(0.4);
-			color: #999999;
+			color: $uni-text-color-secondary;
 		}
+	}
+	
+	.my_picker_content {
+		font-size: $uni-font-size-base;
+		padding-right: 50rpx;
 	}
 </style>

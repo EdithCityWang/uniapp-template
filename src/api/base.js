@@ -19,6 +19,9 @@ export const wxBindPhone = (params) => axios.post('/api/user/bindRegister', para
 	}
 })
 
+// 获取地区三联列表
+export const getRegionTree = (params) => axios.post('/api/region/getRegionTree', params)
+
 // 获取用户信息
 export const getUserInfo = (params) => axios.post('/api/user/info', params)
 

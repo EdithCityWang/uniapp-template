@@ -44,7 +44,7 @@
 	color: $uni-text-color-secondary;
 	background-color: $uni-bg-color;
 	font-size: $uni-font-size-sm;
-	z-index: 999;
+	z-index: 99;
 	line-height: 1.6;
 	height: 112rpx;
 	display: flex;

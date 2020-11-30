@@ -17,14 +17,15 @@
 /* 行为相关颜色 */
 $uni-color-primary: $primary-color;
 $uni-color-success: #4FCF8A;
-$uni-color-warning: #FDA82D;
+$uni-color-warning: $warning-color;
 $uni-color-error: #ff0000;
+$uni-color-info: #0ED2E8;
 $uni-color-white: #ffffff;
 $uni-color-black: #000000;
 
 /* 文字基本颜色 */
-$uni-text-color:#333; //基本色
-$uni-text-color-inverse:#fff;//反色
+$uni-text-color: $text-color; //基本色
+$uni-text-color-inverse: #fff;//反色
 $uni-text-color-regular: $text-color-regular; // 普通文本
 $uni-text-color-secondary: $text-color-secondary; // 辅助文本
 $uni-text-color-grey: $text-color-secondary; //辅助灰色，如加载更多的提示信息
@@ -36,7 +37,7 @@ $uni-text-color-link: #3388FF; // 链接文本颜色
 
 /* 背景颜色 */
 $uni-bg-color: $bg-color;
-$uni-bg-color-grey: #f5f5f5;
+$uni-bg-color-grey: #F7F7F7;
 $uni-bg-color-hover:#f1f1f1;//点击状态颜色
 $uni-bg-color-mask:rgba(0, 0, 0, 0.6);//遮罩颜色
 
@@ -46,19 +47,19 @@ $uni-border-color: #F6F6F6;
 /* 尺寸变量 */
 
 /* 文字尺寸 */
-$uni-font-size-sm:24rpx;
+$uni-font-size-sm: 24rpx;
 $uni-font-size-base:28rpx;
-$uni-font-size-lg:32rpx;
+$uni-font-size-lg: 32rpx;
 
 /* 图片尺寸 */
 $uni-img-size-sm: 120rpx;
-$uni-img-size-base: 150rpx;
+$uni-img-size-base: $img-size-base;
 $uni-img-size-lg: 240rpx;
 
 /* Border Radius */
 $uni-border-radius-sm: 4rpx;
-$uni-border-radius-base: 6rpx;
-$uni-border-radius-lg: 12rpx;
+$uni-border-radius-base: 10rpx;
+$uni-border-radius-lg: 20rpx;
 $uni-border-radius-circle: 50%;
 
 /* 水平间距 */
@@ -76,11 +77,11 @@ $uni-opacity-disabled: 0.3; // 组件禁用态的透明度
 
 /* 文章场景相关 */
 $uni-color-title: #2C405A; // 文章标题颜色
-$uni-font-size-title:40rpx;
+$uni-font-size-title: 40rpx;
 $uni-color-subtitle: #555555; // 二级标题颜色
-$uni-font-size-subtitle:36rpx;
+$uni-font-size-subtitle: 36rpx;
 $uni-color-paragraph: #3F536E; // 文章段落颜色
-$uni-font-size-paragraph:30rpx;
+$uni-font-size-paragraph: 30rpx;
 
 /* 顶部导航 */
 $status-bar-height: var(--status-bar-height); // 状态栏高度
@@ -102,12 +103,15 @@ $my-segment-control-bg-color-active: $uni-color-primary; // 分段器激活状�
 /* 空列表 */
 $my-list-empty-color: $uni-text-color-regular; // 提示文字字色
 $my-list-empty-font-size: 30rpx; // 提示文字字号
-$my-list-empty-image-width: 332rpx; // 空列表图片宽度
+$my-list-empty-image-width: 322rpx; // 空列表图片宽度
 
 /* 输入框 */
 $my-input-border-color: #DCDDE0; // 输入框边框颜色
-$my-input-placeholder-color: #C8C9CC; // 输入框提示字色
+$my-input-placeholder-color: #999999; // 输入框提示字色
 
 /* 弹窗 */
 $my-modal-button-border-color: #EBEDF0; // 弹窗按钮边框颜色
 $my-modal-border-radius: 10rpx;
+
+/* 上拉加载 */
+$uni-loading-font-size: $uni-font-size-base; // 分页上拉加载字号

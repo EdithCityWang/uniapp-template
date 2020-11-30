@@ -1,15 +1,9 @@
 <template>
-	<view class="my_picker">
-		<!-- <picker @change="bindChange" :mode="mode" v-if="mode === 'date'">
-			<view class="my_picker_content">
-				<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ selectedValue || placeholder }}</text>
-			</view>
-			<text :class="'icon iconfont ' + iconName"></text>
-		</picker> -->
+	<view :class="'my_picker ' + className">
 		<view class="my_picker_content" @click="showPickerFn">
 			<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ selectedValue || placeholder }}</text>
+			<text :class="'icon iconfont ' + iconName"></text>
 		</view>
-		<text :class="'icon iconfont ' + iconName"></text>
 		<mx-date-picker 
 			:show="showPicker" 
 			:value="selectedValue" 
@@ -41,6 +35,7 @@
 				type: String,
 				default: 'date'
 			},
+			className: String, // 自定义样式
 			placeholder: {
 				type: String,
 				default: "请选择"
@@ -136,23 +131,17 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.my_picker {
 		position: relative;
-		
-		.my_picker_content {
-			font-size: 30rpx;
-			padding-right: 50rpx;
-		}
 		
 		.iconfont {
 			right: 0;
 			position: absolute;
-			color: #2E3344;
+			color: $uni-text-color;
 			z-index: 10;
 			top: 50%;
 			font-size: 32rpx;
-			width: 42rpx;
 			text-align: center;
 			line-height: 42rpx;
 			margin-top: -21rpx;
@@ -160,7 +149,12 @@
 		
 		.iconxuanze {
 			transform: scale(0.4);
-			color: #999999;
+			color: $uni-text-color-secondary;
 		}
+	}
+	
+	.my_picker_content {
+		font-size: $uni-font-size-base;
+		padding-right: 50rpx;
 	}
 </style>

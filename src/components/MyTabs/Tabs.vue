@@ -1,10 +1,15 @@
 <template>
-	<scroll-view class="tabs" :scroll-x="true" :scroll-into-view="currentViewId" :scroll-with-animation="true">
+	<scroll-view 
+		:class="'my_tabs ' + className" 
+		:scroll-x="true" 
+		:scroll-into-view="currentViewId" 
+		:scroll-with-animation="true"
+	>
 		<view 
 			v-for="(item, index) in ranges" 
 			:key="item[labelValue]"
-			:id="'tab_item_' + item[labelValue]" 
-			:class="'tab_item' + ((index === current) ? ' active' : '')" 
+			:id="'my_tab_item_' + item[labelValue]" 
+			:class="'my_tab_item' + ((index === current) ? ' active' : '')" 
 			:style="{
 				color: (index === current) ? defaultOptions.activeColor : defaultOptions.color,
 				backgroundColor: (index === current) ? defaultOptions.activeBgColor: defaultOptions.bgColor
@@ -14,7 +19,7 @@
 			<text>{{ item[label] }}</text>
 			<view 
 				v-if="index === current" 
-				class="tab_item_active_line"
+				class="my_tab_item_active_line"
 				:style="{
 					backgroundColor: defaultOptions.activeColor
 				}"
@@ -27,6 +32,7 @@
 	import variables from '@/static/styles/variables.scss.js'
 	export default {
 		props: {
+			className: String,
 			value: Number || String,
 			ranges: Array, // 列表
 			label: String, // 名称
@@ -77,35 +83,32 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-.tabs {
+<style lang="scss">
+.my_tabs {
 	white-space: nowrap;
-	// padding: 0 30rpx;
-	// background-color: #FFFFFF;
+}
+.my_tab_item {
+	display: inline-block;
+	line-height: 90rpx;
+	font-size: 30rpx;
+	color: $uni-text-color-regular;
+	padding: 0 39rpx;
 	
-	.tab_item {
-		display: inline-block;
-		line-height: 90rpx;
-		font-size: 30rpx;
-		color: $uni-text-color-regular;
-		padding: 0 39rpx;
-		
-		&.active {
-			position: relative;
-			color: $uni-color-primary;
-			font-weight: bold;
-			
-			.tab_item_active_line {
-				position: absolute;
-				content: '';
-				width: 40rpx;
-				height: 6rpx;
-				background-color: $uni-color-primary;
-				bottom: 0;
-				left: 50%;
-				margin-left: -20rpx;
-			}
-		}
+	&.active {
+		position: relative;
+		color: $uni-color-primary;
+		font-weight: bold;
 	}
+}
+
+.my_tab_item_active_line {
+	position: absolute;
+	content: '';
+	width: 40rpx;
+	height: 6rpx;
+	background-color: $uni-color-primary;
+	bottom: 0;
+	left: 50%;
+	margin-left: -20rpx;
 }
 </style>

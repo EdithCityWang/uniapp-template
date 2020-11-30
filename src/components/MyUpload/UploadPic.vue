@@ -1,16 +1,16 @@
 <template>
-	<view class="upload_box">
-		<view class="image_list">
-			<view class="image_item" v-for="(item, index) in files" :key="index">
+	<view class="my_upload_box">
+		<view class="my_upload_image_list">
+			<view class="my_upload_image_item" v-for="(item, index) in files" :key="index">
 				<view class="icon iconfont iconshanchu" @click="removeItem(index)"></view>
 				<image :src="item"></image>
 			</view>
-			<view class="upload" v-if="files.length < limit" @click="handleUpload">
+			<view class="my_upload" v-if="files.length < limit" @click="handleUpload">
 				<view class="icon iconfont iconshangchuan"></view>
 				<text>{{ btnText }}</text>
 			</view>
 		</view>
-		<view class="upload_tip" v-if="tip">{{ tip }}</view>
+		<view class="my_upload_tip" v-if="tip">{{ tip }}</view>
 	</view>
 </template>
 
@@ -42,7 +42,9 @@ export default {
 		// 默认图片
 		defaultFiles: {
 			type: Array,
-			default: []
+			default: () => {
+				return []
+			}
 		}
 	},
 	data() {
@@ -81,10 +83,10 @@ export default {
 							content: res.data.message || '上传失败'
 						})
 						
-						return new Promise.reject(res);
+						reject(res);
 					}
 				}).catch(err => {
-					return new Promise.reject(err);
+					reject(err)
 				})
 			})
 		},
@@ -133,54 +135,50 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.upload_box {
-	.upload {
-		width: $uni-img-size-sm;
-		height: $uni-img-size-sm;
-		border: 2rpx solid #d9d9d9;
-		font-size: $uni-font-size-sm;
-		color: $uni-text-color-secondary;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-		margin-bottom: 20rpx;
+<style lang="scss">
+.my_upload {
+	width: $uni-img-size-sm;
+	height: $uni-img-size-sm;
+	border: 2rpx solid #d9d9d9;
+	font-size: $uni-font-size-sm;
+	color: $uni-text-color-secondary;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20rpx;
 
-		.iconfont {
-			margin-bottom: 8rpx;
-		}
-	}
-
-	.image_list {
-		display: flex;
-		flex-wrap: wrap;
-
-		.image_item {
-			position: relative;
-			width: $uni-img-size-sm;
-			height: $uni-img-size-sm;
-			margin: 0 20rpx 20rpx 0;
-			z-index: 1;
-
-			image {
-				width: $uni-img-size-sm;
-				height: $uni-img-size-sm;
-			}
-
-			.iconfont {
-				color: $uni-color-error;
-				font-size: $uni-font-size-lg;
-				position: absolute;
-				z-index: 10;
-				right: 0;
-				top: 0;
-			}
-		}
+	.iconfont {
+		margin-bottom: 8rpx;
 	}
 }
 
-.upload_tip {
+.my_upload_image_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.my_upload_image_item {
+	position: relative;
+	width: $uni-img-size-sm;
+	height: $uni-img-size-sm;
+	margin: 0 20rpx 20rpx 0;
+	z-index: 1;
+
+	image {
+		width: $uni-img-size-sm;
+		height: $uni-img-size-sm;
+	}
+
+	.iconfont {
+		color: $uni-color-error;
+		font-size: $uni-font-size-lg;
+		position: absolute;
+		z-index: 10;
+		right: 0;
+		top: 0;
+	}
+}
+.my_upload_tip {
 	color: $uni-text-color-secondary;
 	font-size: $uni-font-size-sm;
 	margin-top: -10rpx;

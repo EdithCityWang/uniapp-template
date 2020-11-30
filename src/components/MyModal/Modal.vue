@@ -1,5 +1,6 @@
 <template>
-	<view class="my_modal" v-if="show">
+	<view :class="'my_modal ' + className" v-if="show">
+		<view class="my_modal_mask" @click="handleMaskClose"></view>
 		<view class="my_modal_wrapper">
 			<view class="my_modal_header">
 				<slot name="header">
@@ -11,14 +12,13 @@
 					<text>{{ message }}</text>
 				</slot>
 			</view>
-			<view class="my_modal_footer">
+			<view class="my_modal_footer" v-if="showFooter">
 				<slot name="footer">
 					<view class="btn_group">
 						<button class="btn_cancel" type="default" @click="cancel">取消</button>
 						<button class="btn_confirm" type="default" @click="confirm">确认</button>
 					</view>
 				</slot>
-				
 			</view>
 		</view>
 	</view>
@@ -27,6 +27,7 @@
 <script>
 	export default {
 		props: {
+			className: String, // 自定义样式
 			// 标题
 			title: {
 				type: String,
@@ -46,6 +47,16 @@
 			beforeClose: {
 				type: Boolean,
 				default: false
+			},
+			// 是否显示footer
+			showFooter: {
+				type: Boolean,
+				default: true
+			},
+			// 是否允许点击遮罩层关闭
+			maskClosable: {
+				type: Boolean,
+				default: true
 			}
 		},
 		data() {
@@ -66,6 +77,16 @@
 			 */
 			open() {
 				this.show = true;
+			},
+			
+			/**
+			 * @description 点击遮罩层关闭
+			 */
+			handleMaskClose() {
+				if(!this.maskClosable) {
+					return false;
+				}
+				this.close()
 			},
 			
 			/**
@@ -98,23 +119,43 @@
 </script>
 
 <style lang="scss">
+// @keyframes myfirst{
+// 	0% {opacity: 0; margin-top: 700rpx;}/*初始状态 透明度为0*/  
+// 	40% {opacity: 0.5; margin-top: 300rpx;}/*过渡状态 透明度为0*/  
+// 	100% {opacity: 1; margin-top: 0;}/*结束状态 透明度为1*/  
+// 	from {margin-top: 700rpx;}
+// 	to {margin-top: 0;}
+// }
 .my_modal {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: 100;
-	background-color: $uni-bg-color-mask;
+	z-index: 99;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.my_modal_mask {
+	position: absolute;
+	background-color: $uni-bg-color-mask;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 .my_modal_wrapper {
+	position: relative;
 	background-color: $uni-bg-color;
 	border-radius: $my-modal-border-radius;
 	width: 622rpx;
+	z-index: 101;
+	// animation: myfirst 0.6s;
+	// animation-timing-function: ease;
 }
 
 .my_modal_header {

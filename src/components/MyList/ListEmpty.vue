@@ -1,5 +1,5 @@
 <template>
-	<view :class="'my_list_empty ' + className">
+	<view :class="'my_list_empty ' + className" :style="{ paddingTop: paddingTop + 'rpx' }">
 		<image :src="emptyImage" mode="widthFix"></image>
 		<text>{{ tipText }}</text>
 		<button v-if="showButton" type="primary" size="medium" shape="circle" plain>去逛逛</button>
@@ -27,6 +27,11 @@
 			buttonText: {
 				type: String,
 				default: '去逛逛'
+			},
+			// 顶部距离 单位rpx
+			paddingTop: {
+				type: Number,
+				default: 150
 			}
 		},
 		data() {

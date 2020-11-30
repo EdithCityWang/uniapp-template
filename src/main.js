@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import store from './store'
-import './mock'
+// import './mock'
 // import './components/index.js'
 
 import Form from "./components/MyForm/Form";
@@ -20,6 +20,10 @@ import Modal from "./components/MyModal/Modal";
 
 import Swiper from "./components/MySwiper/Swiper";
 
+import List from "./components/MyList/List";
+import ListItem from "./components/MyList/ListItem";
+import ListEmpty from "./components/MyList/ListEmpty";
+
 import Tabs from "./components/MyTabs/Tabs";
 
 Vue.component('MyForm', Form);
@@ -37,6 +41,10 @@ Vue.component('MyGrids', Grids);
 Vue.component('MyModal', Modal);
 
 Vue.component('MySwiper', Swiper);
+
+Vue.component('MyList', List);
+Vue.component('MyListItem', ListItem);
+Vue.component('MyListEmpty', ListEmpty);
 
 Vue.component('MyTabs', Tabs);
 

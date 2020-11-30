@@ -1,5 +1,5 @@
 <template>
-	<view :class="[styleType === 'text'?'segmented-control--text' : 'segmented-control--button' ]" :style="{ borderColor: styleType === 'text' ? '' : activeColor }"
+	<view :class="[styleType === 'text'?'segmented-control--text' : 'segmented-control--button', className ]" :style="{ borderColor: styleType === 'text' ? '' : activeColor }"
 	 class="segmented-control">
 		<view v-for="(item, index) in values" :class="[ styleType === 'text'?'segmented-control__item--text': 'segmented-control__item--button' , index === currentIndex&&styleType === 'button'?'segmented-control__item--button--active': '' , index === 0&&styleType === 'button'?'segmented-control__item--button--first': '',index === values.length - 1&&styleType === 'button'?'segmented-control__item--button--last': '' ]"
 		 :key="index" :style="{
@@ -23,6 +23,7 @@
 	export default {
 		name: 'UniSegmentedControl',
 		props: {
+			className: String,
 			current: {
 				type: Number,
 				default: 0

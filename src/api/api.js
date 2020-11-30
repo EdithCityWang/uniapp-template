@@ -1,10 +1,11 @@
 import Request from 'luch-request' // 使用npm
 import store from '@/store'
+import config from '@/tools/config.js'
 
 const axios = new Request();
 
 // #ifndef H5
-axios.config.baseURL = "http://192.168.43.8:3000";
+axios.config.baseURL = config.baseURL; // 测试环境
 // #endif
 
 axios.interceptors.request.use((config) => { // 可使用async await 做异步操作
@@ -17,12 +18,8 @@ axios.interceptors.request.use((config) => { // 可使用async await 做异步�
 		loadingTitle: config.custom.loadingTitle || '加载中...'
 	}
 
-	let {
-		Token = ""
-	} = store.state.userInfo;
-
-	if (Token) {
-		config.header.Token = Token;
+	if (store.getters.publicToken) {
+		config.header.Token = store.getters.publicToken;
 	}
 	// 如果token不存在，return Promise.reject(config) 会取消本次请求
 	// else {
@@ -42,7 +39,7 @@ axios.interceptors.request.use((config) => { // 可使用async await 做异步�
 })
 
 axios.interceptors.response.use((response) => { /* 对响应成功做点什么 可使用async await 做异步操作*/
-	if (response.statusCode !== 200) { // 服务端返回的状态码不等于200，则reject()
+	if (Number(response.statusCode) !== 200) { // 服务端返回的状态码不等于200，则reject()
 	   return Promise.reject(response) // return Promise.reject 可使promise状态进入catch
 	}
 	
@@ -60,10 +57,6 @@ axios.interceptors.response.use((response) => { /* 对响应成功做点什么 �
 }, (response) => { /*  对响应错误做点什么 （statusCode !== 200）*/
 	console.log(response)
 	uni.hideLoading();
-	/*uni .showModal({
-		title: '提示',
-		content: '接口请求失败'
-	}); */
 	return Promise.reject(response)
 })
 

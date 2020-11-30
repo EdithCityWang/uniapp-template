@@ -9,13 +9,13 @@
 				<text class="userrank">{{ userInfo.Role && userInfo.Role.Remark ?  userInfo.Role.Remark : '' }}</text>
 			</view>
 		</view>
-		<my-form :label-width="200">
+	<!-- 	<my-form :label-width="200">
 			<my-form-section>
 				<my-form-item label="地址管理" @click.native="toPage('/pagesAddress/address/address')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
+					<view slot="extra" class="icon iconfont iconxuanze-right"></view>
 				</my-form-item>
 			</my-form-section>
-		</my-form>
+		</my-form> -->
 		
 		<button type="primary" data-shape="circle" size="large" @click="myLogout" plain>退出登录</button>
 	</view>
@@ -23,10 +23,12 @@
 
 <script>
 	import { mapState } from "vuex"
-	import { logout } from "@/api/http"
+	import { logout } from "@/api/base.js"
 	export default {
 		computed: {
-			...mapState(['userInfo'])
+			...mapState({
+				userInfo: state => state.user.userInfo
+			})
 		},
 		data() {
 			return {
@@ -84,6 +86,11 @@
 	.my_page {
 		button {
 			margin: 100rpx 80rpx 0;
+		}
+		
+		.iconfont {
+			transform: scale(0.7);
+			font-size: 20rpx;
 		}
 		
 		.user_box {

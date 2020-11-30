@@ -1,5 +1,5 @@
 let scssVariables = require('./src/static/styles/variables.scss.js');
-	
+
 module.exports = {
     publicPath: './',
     lintOnSave: true,
@@ -21,9 +21,7 @@ module.exports = {
 				.loader('sass-resources-loader')
 				.options({
 					resources: [
-						'./src/static/styles/uni.scss',
-						'./src/static/styles/iconfont.scss',
-						'./src/static/styles/common.scss'
+						'./src/static/styles/uni.scss'
 					]
 				})
 		})
@@ -31,6 +29,6 @@ module.exports = {
     devServer: {
         port: 3030,
         open: true,
-        proxy: "http://192.168.43.8:3000",
+        proxy: 'http://192.168.1.116:3000',
     }
 }

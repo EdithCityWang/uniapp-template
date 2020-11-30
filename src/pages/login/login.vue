@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { login } from '@/api/http';
+import { login } from '@/api/base.js';
 
 export default {
 	data() {

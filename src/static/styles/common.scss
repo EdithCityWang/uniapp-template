@@ -27,7 +27,8 @@ button {
 	}
 }
 
-button[type='default'] {
+button[type='default'],
+button[type='default'].button-hover{
 	color: $uni-text-color-inverse;
 	background-color: #868686;
 
@@ -39,7 +40,8 @@ button[type='default'] {
 	}
 }
 
-button[type='primary'] {
+button[type='primary'],
+button[type='primary'].button-hover{
 	color: $uni-text-color-inverse;
 	background-color: $uni-color-primary;
 
@@ -51,7 +53,8 @@ button[type='primary'] {
 	}
 }
 
-button[type='warn'] {
+button[type='warn'],
+button[type='warn'].button-hover{
 	color: $uni-text-color-inverse;
 	background-color: $uni-color-warning;
 
@@ -63,6 +66,18 @@ button[type='warn'] {
 	}
 }
 
+button[type='info'],
+button[type='info'].button-hover{
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-info;
+
+	&[plain],
+	&[plain].button-hover{
+		color: $uni-color-info;
+		border-color: $uni-color-info;
+		background-color: $uni-bg-color;
+	}
+}
 /* 小型按钮 */
 button[size='mini'] {
 	line-height: 46rpx;
@@ -277,143 +292,44 @@ button[size='large'] {
 	color: $my-input-placeholder-color;
 }
 
-/* 商品列表筛选条件menu */
-.good_sort_menus {
-	display: flex;
-	background-color: #FFFFFF;
+/** 选择地址弹窗 **/
+/deep/ .address_picker_modal {
+	align-items: flex-end !important;
+	z-index: 100 !important;
 	
-	.menu_item {
-		flex: 1;
+	.my_modal_header {
+		padding: 10rpx !important;
+	}
+	
+	.address_picker_modal_header {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 106rpx;
-		font-size: 34rpx;
-		color: $uni-text-color;
-		font-weight: bold;
+		justify-content: space-between;
 		
-		&.active {
-			color: $uni-color-primary;
-		}
-		
-		.menu_icons {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin: 2rpx 0 0 10rpx;
-			transform: scale(0.5);
-			
-			.iconfont {
-				color: #BFBFBF;
-				font-size: 24rpx;
-				
-				&.active {
-					color: $uni-color-primary;
-				}
-			}
+		button.plain.mini {
+			border: none;
+			font-size: 24rpx;
 		}
 	}
-}
-
-
-/* 商品底部导航 */
-/deep/ .uni-goods-nav {
-	border-top: 2rpx solid #CDCDCD;
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 99;
 	
-	.uni-tab__cart-box {
-		height: 130rpx;
-		
-		.uni-tab__cart-sub-left {
-			padding: 0 15rpx;
-			
-			.uni-tab__cart-button-left {
-				margin: 0 35rpx;
-				
-				.uni-tab__icon {
-					width: initial;
-					height: initial;
-					
-					.uni-icons {
-						font-size: 36rpx;
-						color: #707070 !important;
-						line-height: 1;
-					}
-				}
-				
-				.uni-tab__text {
-					font-size: 22rpx;
-					color: #707070 !important;
-					line-height: 1;
-				}
-				
-			}
-		}
-		
-		.uni-tab__right {
-			margin: 15rpx 30rpx 15rpx 0;
-			
-			.uni-tab__cart-button-right-text {
-				font-size: 30rpx;
-			}
-		}
+	.my_modal_content {
+		padding: 0 !important;
+	}
+	.my_modal_wrapper {
+		width: 100% !important;
 	}
 }
 
-/* 加入购物车弹窗 */
- .add_cart_modal {
-	/deep/ .my_modal {
-		align-items: flex-end;
-		
-		 .my_modal_wrapper {
-			width: 100%;
-			border-radius: 0;
-			border-top-left-radius: 30rpx;
-			border-top-right-radius: 30rpx;
-			
-			.my_modal_header {
-				text-align: right;
-				padding: 30rpx 30rpx 0;
-			}
-			
-			.my_modal_content {
-				padding: 0 60rpx 10rpx;
-				text-align: left;
-			}
-			
-			.my_modal_footer {
-				border-top: none;
-				padding: 40rpx 50rpx;
-				.btn_footer {
-					display: flex;
-					justify-content: space-between;
-					
-					button[size=large][data-shape=circle] {
-						flex: 1;
-						border-radius: 40rpx;
-						line-height: 80rpx;
-						font-size: $uni-font-size-base;
-					}
-					
-					button + button {
-						margin-left: 50rpx;
-					}
-					
-					button[type=warn] {
-						background:linear-gradient(272deg,rgba(255,165,44,1) 0%,rgba(243,180,53,1) 100%);
-					}
-					
-					button[type=primary] {
-						background:linear-gradient(272deg,rgba(230,0,73,1) 0%,rgba(243,53,97,1) 100%);
-					}
-				}
-				
-			}
+/deep/ .my_form_item {
+	
+	.my_form_item_content {
+		input,
+		textarea{
+			font-size: $uni-font-size-base;
 		}
+	}
+	
+	&::after {
+		background-color: #DDDDDD;
+		height: 1rpx;
 	}
 }

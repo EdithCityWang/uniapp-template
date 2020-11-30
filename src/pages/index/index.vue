@@ -74,6 +74,7 @@
 	.demo_index_page {
 		.iconfont {
 			font-size: 20rpx;
+			transform: scale(0.7);
 		}
 	}
 </style>

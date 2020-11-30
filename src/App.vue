@@ -42,5 +42,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/static/styles/common.scss'
+@import '@/static/styles/iconfont.scss';
+@import '@/static/styles/common.scss';
 </style>

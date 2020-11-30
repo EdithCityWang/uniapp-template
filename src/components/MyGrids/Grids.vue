@@ -60,7 +60,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .my_grids {
 	display: flex;
 	align-items: flex-start;
@@ -80,7 +80,7 @@
 
 .my_grid_item_icon {
 	font-size: 50rpx;
-	color: $uni-color-primary;
+	color: $uni-text-color;
 	margin-bottom: 16rpx;
 	line-height: 1;
 }
