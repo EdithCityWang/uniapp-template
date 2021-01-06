@@ -50,7 +50,7 @@
     "@dcloudio/uni-quickapp-webview": "^2.0.0-27920200527001",
     "@dcloudio/uni-stat": "^2.0.0-27920200527001",
     "async-validator": "^3.3.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "jweixin-module": "^1.6.0",
