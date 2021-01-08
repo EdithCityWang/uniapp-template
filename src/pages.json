@@ -54,23 +54,39 @@
 		}
 	    ,{
             "path" : "pages/myComponents/htmlParse",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "富文本解析"
+			}
         }
         ,{
             "path" : "pages/myComponents/grids",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "4*n宫格"
+			}
         }
         ,{
             "path" : "pages/myComponents/addressSelector",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "地址选择器"
+			}
         }
         ,{
             "path" : "pages/myComponents/tabs",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "tabs"
+			}
         }
         ,{
             "path" : "pages/myComponents/swiperDemo",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "轮播图"
+			}
+        }
+        ,{
+            "path" : "pages/myComponents/list",
+            "style" : {
+				"navigationBarTitleText": "列表"
+			}
         }
     ],
 	"subPackages": [

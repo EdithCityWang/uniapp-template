@@ -16,6 +16,14 @@ image {
 	display: block;
 }
 
+// 支付宝小程序input有默认padding/height, 需要初始化
+input {
+	padding: 0;
+	display: block;
+	height: initial;
+	line-height: initial;
+}
+
 button {
 	border-radius: $uni-border-radius-sm;
 	padding: 0 30rpx;
@@ -110,6 +118,119 @@ button[size='large'] {
 		border-radius: 50rpx;
 	}
 }
+
+/* #ifdef MP-ALIPAY */
+button {
+	border-radius: $uni-border-radius-sm;
+	padding: 0 30rpx;
+	font-size: 30rpx;
+	margin: 0;
+	border: 1rpx solid transparent;
+	
+	&::after {
+		content: none;
+	}
+}
+
+button.default,
+button.default.button-hover{
+	color: $uni-text-color-inverse;
+	background-color: #868686;
+
+	&.plain,
+	&.plain.button-hover{
+		color: #868686;
+		border-color: #868686;
+		background-color: $uni-bg-color;
+	}
+}
+
+button.primary,
+button.primary.button-hover{
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-primary;
+
+	&.plain,
+	&.plain.button-hover{
+		color: $uni-color-primary;
+		border-color: $uni-color-primary;
+		background-color: $uni-bg-color;
+	}
+}
+
+button.warn,
+button.warn.button-hover{
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-warning;
+
+	&.plain,
+	&.plain.button-hover{
+		color: $uni-color-warning;
+		border-color: $uni-color-warning;
+		background-color: $uni-bg-color;
+	}
+}
+
+button.info,
+button.info.button-hover{
+	color: $uni-text-color-inverse;
+	background-color: $uni-color-info;
+
+	&.plain,
+	&.plain.button-hover{
+		color: $uni-color-info;
+		border-color: $uni-color-info;
+		background-color: $uni-bg-color;
+	}
+}
+
+/* disabled 按钮 */
+button.disabled {
+	color: $uni-text-color-inverse;
+	background-color: $uni-bg-color;
+	opacity: $uni-opacity-disabled;
+	
+	&[plain],
+	&[plain].button-hover{
+		color: $uni-text-color-disable;
+		background-color: $uni-bg-color;
+		border: 1rpx solid $uni-text-color-disable;
+	}
+}
+
+/* 小型按钮 */
+button.mini {
+	// line-height: 46rpx;
+	padding: 0 12rpx;
+	font-size: $uni-font-size-sm;
+
+	&.circle {
+		border-radius: 23rpx;
+	}
+}
+
+/* 中等按钮 */
+button.medium {
+	// line-height: 60rpx;
+	padding: 0 35rpx;
+	font-size: 30rpx;
+
+	&.circle {
+		border-radius: 30rpx;
+	}
+}
+
+/* 大按钮 */
+button.large {
+	// line-height: 100rpx;
+	padding: 0 47rpx;
+	font-size: 30rpx;
+
+	&.circle {
+		border-radius: 50rpx;
+	}
+}
+/* #endif */
 
 /* card css */
 .my_card {

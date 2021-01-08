@@ -1,46 +1,75 @@
 <template>
-	<view>
-		<my-form class="demo_index_page" :label-width="200">
-			<my-form-section>
-				<my-form-item label="自定义导航" @click.native="toPage('/pages/myComponents/customNavigator')">
-					<view slot="extra" class="icon iconfont iconxuanze-right"></view>
-				</my-form-item>
-				<my-form-item label="置顶提示" @click.native="toPage('/pages/myComponents/fixedTip')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="空列表" @click.native="toPage('/pages/myComponents/emptyList')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="图片批量上传" @click.native="toPage('/pages/myComponents/uploadPics')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="时间选择器" @click.native="toPage('/pages/myComponents/timeSelector')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-			</my-form-section>
-			<my-form-section>
-				<my-form-item label="form表单校验" @click.native="toPage('/pages/myComponents/formValidator')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-			</my-form-section>
-			<my-form-section>
-				<my-form-item label="富文本解析器" @click.native="toPage('/pages/myComponents/htmlParse')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="4*n宫格" @click.native="toPage('/pages/myComponents/grids')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="地址选择器" @click.native="toPage('/pages/myComponents/addressSelector')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="tabs" @click.native="toPage('/pages/myComponents/tabs')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-				<my-form-item label="轮播图swiper" @click.native="toPage('/pages/myComponents/swiperDemo')">
-					<view slot="extra" class="icon iconfont iconxuanze-right" ></view>
-				</my-form-item>
-			</my-form-section>
-		</my-form>
+	<view class="demo_index_page">
+		<my-list>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/customNavigator">
+				<view slot="content" class="list_item_content">
+					<text>自定义导航</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/fixedTip">
+				<view slot="content" class="list_item_content">
+					<text>置顶提示</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/emptyList">
+				<view slot="content" class="list_item_content">
+					<text>空列表</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/list">
+				<view slot="content" class="list_item_content">
+					<text>列表</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/uploadPics">
+				<view slot="content" class="list_item_content">
+					<text>图片批量上传</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/timeSelector">
+				<view slot="content" class="list_item_content">
+					<text>时间选择器</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+		</my-list>
+		<my-list>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/formValidator">
+				<view slot="content" class="list_item_content">
+					<text>form表单校验</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/htmlParse">
+				<view slot="content" class="list_item_content">
+					<text>富文本解析器</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/grids">
+				<view slot="content" class="list_item_content">
+					<text>4*n宫格</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/tabs">
+				<view slot="content" class="list_item_content">
+					<text>tabs</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+			<my-list-item :is-thumb="false" url="/pages/myComponents/swiperDemo">
+				<view slot="content" class="list_item_content">
+					<text>轮播图swiper</text>
+					<uni-icons type="arrowright"></uni-icons>
+				</view>
+			</my-list-item>
+		</my-list>
 	</view>
 </template>
 
@@ -55,26 +84,20 @@
 		},
 		onShow() {
 
-		},
-		methods: {
-			/**
-			 * @description 跳转页面
-			 * @param {String} path 跳转路径 
-			 */
-			toPage (path) {
-				uni.navigateTo({
-					url: path
-				})
-			}
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.demo_index_page {
-		.iconfont {
-			font-size: 20rpx;
-			transform: scale(0.7);
+		/deep/ .my_list_item {
+			padding: 36rpx 40rpx;
+			
+			.list_item_content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
 		}
 	}
 </style>

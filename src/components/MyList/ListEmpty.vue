@@ -42,7 +42,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .my_list_empty {
 	display: flex;
 	justify-content: center;

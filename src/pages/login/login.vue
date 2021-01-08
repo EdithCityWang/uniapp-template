@@ -1,6 +1,6 @@
 <template>
 	<view class="login_page">
-		<image class="login_logo" src="/static/images/logo.png" mode=""></image>
+		<image class="login_logo" src="/static/images/logo.png"></image>
 		<view class="login_title">
 			<text>Hi,</text>
 			<text>欢迎登录</text>
@@ -12,10 +12,10 @@
 			</view>
 			<view class="form_item_input">
 				<view class="form_item_label" v-show="!!postdata.Password">密码</view>
-				<input v-model.trim="postdata.Password" type="password" name="Password" placeholder="请输入密码" placeholder-style="color: #95A0B6;" />
+				<input v-model.trim="postdata.Password" type="password" password name="Password" placeholder="请输入密码" placeholder-style="color: #95A0B6;" />
 			</view>
 			<view class="form_item_btn">
-				<button type="primary" size="large" form-type="submit">登录</button>
+				<button class="primary large" type="primary" size="large" form-type="submit">登录</button>
 			</view>
 		</form>
 	</view>

@@ -11,7 +11,7 @@
 			:range-key="rangeKey" 
 			:disabled="(mode === 'selector' && range.length === 0) || disabled"
 		>
-			<view>
+			<view class="my_picker_wrapper">
 				<view class="my_picker_content">
 					<text :style="{ color: selectedValue ? '#333333' : '#999999'}">{{ (mode === 'selector' && range.length === 0) ? '暂无数据' : (selectedValue || placeholder) }}</text>
 				</view>

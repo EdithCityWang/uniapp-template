@@ -28,7 +28,7 @@ export default {
 		// 如果没有token则跳回登录页
 		this.$store.dispatch('getUserInfo').catch(res => {
 			uni.reLaunch({
-				url: 'pages/login/login'
+				url: '/pages/login/login'
 			});
 		})
 	},

@@ -1,7 +1,7 @@
 '<template>
 	<view class="tabbar_page my_page">
 		<view class="user_box">
-			<image class="bg" src="../../static/images/bg_my.png" mode=""></image>
+			<image class="bg" src="../../static/images/bg_my.png"></image>
 			
 			<view class="user_info_box">
 				<image class="logo" src="/static/images/icon_head_def.png"></image>
@@ -17,7 +17,7 @@
 			</my-form-section>
 		</my-form> -->
 		
-		<button type="primary" data-shape="circle" size="large" @click="myLogout" plain>退出登录</button>
+		<button class="primary circle large plain" type="primary" data-shape="circle" size="large" @click="myLogout" plain>退出登录</button>
 	</view>
 </template>
 

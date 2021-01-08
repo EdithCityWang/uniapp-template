@@ -10,7 +10,7 @@ const variables = {
 	'text_color_secondary': '#999999',
 	'text_color_regular': '#666666',
 	'bg_color': '#ffffff',
-	'img_size_base': '150rpx'
+	'img_size_base': 150
 }
 
 module.exports = variables;

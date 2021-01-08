@@ -5,23 +5,15 @@
 		:class="'my_list_item ' + className"
 	>
 		<image 
+			v-if="isThumb"
 			class="my_list_item_thumb" 
 			:src="thumb"
 			mode="scaleToFill"
-			:style="{
-				width: thumbSize.width + 'rpx',
-				height: thumbSize.height + 'rpx',
-				left: thumbPosition === 'left' ? (20 + 'rpx') : 'auto',
-				right: thumbPosition === 'right' ? (20 + 'rpx') : 'auto'
-			}"
+			:style="imgStyle"
 		></image>
 		<view 
 			class="my_list_item_content"
-			:style="{
-				minHeight: thumbSize.height + 'rpx',
-				paddingLeft: thumbPosition === 'left' ? (thumbSize.width + 20 + 'rpx') : 0,
-				paddingRight: thumbPosition === 'right' ? (thumbSize.width + 20 + 'rpx') : 0
-			}"
+			:style="contentStyle"
 		>
 			<slot name="content">
 				<view class="my_list_item_title">{{ title }}</view>
@@ -38,6 +30,11 @@
 			className: String,
 			title: String, // 列表标题
 			content: String, // 列表详情
+			// 是否有缩略图，默认true
+			isThumb: {
+				type: Boolean,
+				default: true
+			},
 			thumb: String, // 列表缩略图
 			// 列表缩略图位置：left左；right右
 			thumbPosition: { 
@@ -55,6 +52,34 @@
 				}
 			},
 			url: String, // 跳转路径
+		},
+		computed: {
+			imgStyle() {
+				return {
+					width: this.thumbSize.width + 'rpx',
+					height: this.thumbSize.height + 'rpx',
+					left: this.thumbPosition === 'left' ? (20 + 'rpx') : 'auto',
+					right: this.thumbPosition === 'right' ? (20 + 'rpx') : 'auto'
+				}
+			},
+			contentStyle() {
+				let contentStyle = {
+					minHeight: 'auto',
+					paddingLeft: 0,
+					paddingRight: 0
+				};
+				
+				if(this.isThumb) {
+					contentStyle = {
+						...contentStyle,
+						minHeight: this.thumbSize.height + 'rpx',
+						paddingLeft: this.thumbPosition === 'left' ? (thumbSize.width + 20 + 'rpx') : 0,
+						paddingRight: this.thumbPosition === 'right' ? (thumbSize.width + 20 + 'rpx') : 0
+					}
+				}
+				
+				return contentStyle;
+			}
 		},
 		data() {
 			return {
